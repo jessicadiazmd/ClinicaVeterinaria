@@ -1,3 +1,4 @@
+//MOSTRAR ANIMALES EN ADOPCION
 fetch("http://localhost:3000/mascotas/listado")
   .then((res) => res.json())
   .then((data) => {
@@ -13,10 +14,42 @@ fetch("http://localhost:3000/mascotas/listado")
     document.getElementById("listadoMascotas").innerHTML = `${mostrarAnimales}`;
   });
 
-fetch("http://localhost:3000/clientes/registrar")
-  .then((res) => res.json())
-  .then((data) => {
-    document.getElementById(
-      "formularioRegistro"
-    ).innerHTML = `<form><input type="text" placeholder="Nombre" required/><input type="email" placeholder="Email" required/><input type="text" placeholder="Nombre de la mascota" required/><input id="enviar" type="submit" value"Registrar"/></form>`;
+//REGISTRARSE
+document
+  .querySelector("#botonRegistrar")
+  .addEventListener("click", function () {
+    let nuevoCliente = {
+      nombre: document.querySelector("#nombre").value,
+      email: document.querySelector("#email").value,
+      mascota: document.querySelector("#mascota").value,
+      password: document.querySelector("#password").value,
+    };
+
+    if (
+      //las contraseñas coinciden
+      document.querySelector("#password").value ===
+      document.querySelector("#secondpassword").value
+    ) {
+      fetch("/clientes/alta", {
+        method: "POST",
+        body: JSON.stringify(nuevoCliente),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.altaOK == true) {
+            document.querySelector(".clientesRegistro").innerHTML = " ";
+            document.querySelector(".clientesRegistro").style.display = "none";
+          } else {
+            document.querySelector("#errorContraseña").innerHTML = data.mensaje;
+          }
+        });
+    } else {
+      //las contraseñas no coinciden
+      document.querySelector(
+        "#errorContraseña"
+      ).innerHTML = `<p class="falloRegistro">Las contraseñas no coinciden</p>`;
+    }
   });

@@ -9,23 +9,82 @@
   <body>
     <header>
       <div id="cabecera">
+        <!-- LOGOTIPO -->
         <img
           src="img/logo.png"
           alt="Logotipo clínica veterinaria Larrucea"
           width="100px"
         />
+        <!-- MENU -->
         <nav>
           <ul>
-            <a href="clinica.html"><li>La clínica</li></a>
-            <a href="mascotas.html"><li>Adopciones</li></a>
-            <a href="contacto.html"><li>Contacto</li></a>
-            <a href="#"><li>Registro/Inicio</li></a>
+            <a href="index.html" style="font-weight: 700"
+              ><li>La clínica</li></a
+            >
+            <a href="#adopciones"><li>Adopciones</li></a>
+            <a href="#contacto"><li>Contacto</li></a>
+            <a href="registro.html"><li>Registro/Inicio</li></a>
           </ul>
         </nav>
       </div>
     </header>
+
     <main>
-      <div id="formularioRegistro"></div>
+      <!-- FOTO + TEXTO PRESENTACION -->
+      <div id="presentacion">
+        <img src="img/cabecera.jpeg" alt="" />
+        <div class="textoPresentacion">
+          <p>
+            En la <span>Clínica VetPet</span> tenemos una filosofía, y es la de
+            preocuparnos por vuestros animales como si fueran los nuestros.
+            Contamos con personal altamente cualificado tanto en pequeños
+            animales como en animales exóticos. Además gracias a la tecnología
+            con la que contamos podemos dar un servicio acorde a las necesidades
+            de cada animal.
+          </p>
+          <p>
+            Si necesitáis una primera o segunda opinión podéis visitarnos en
+            nuestra clínica en Leioa.
+          </p>
+          <p class="teEsperamos">¡Te esperamos!</p>
+        </div>
+        <!-- div texto presentacion -->
+      </div>
+      <!-- div presentacion -->
+
+      <!-- ADOPCIONES -->
+      <div id="adopciones">
+        <div class="textoAdopcion">
+          <h1>Adopciones</h1>
+          <p>
+            Estamos en contacto con protectoras y otras asociaciones para ayudar
+            a que los animales que lo necesiten encuentren el hogar perfecto
+            para ellos.
+          </p>
+          <p>
+            No ponemos fotos de los animales en adopción porque lo importante no
+            es su apariencia.
+          </p>
+          <p>
+            Si necesitas más información puedes ponerte en
+            <a href="#contacto.html">contacto</a> con nosotros
+          </p>
+        </div>
+        <div id="listadoMascotas"></div>
+      </div>
+      <!-- div adopciones -->
+
+      <!-- CONTACTO-->
+      <div id="contacto">
+        <h1>Ven a conocernos</h1>
+        <div class="infoContacto">
+          <img
+            src="img/maps.jpg"
+            alt="mapa de la zona donde se encuentra la clínica"
+          />
+          <div class="info"><p></p></div>
+        </div>
+      </div>
     </main>
     <footer></footer>
     <script src="index.js"></script>

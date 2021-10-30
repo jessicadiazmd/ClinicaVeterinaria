@@ -1,8 +1,4 @@
-/* body {
-  background-color: #7ac9d0;
-} */
-
-/* ESTILO DE LA CABECERA */
+/* ----------ESTILO DE LA CABECERA---------- */
 
 #cabecera {
   padding: 30px 20px 0px 50px;
@@ -38,6 +34,8 @@
   color: #005059;
 }
 
+/* ----------EN PÁGINA "LA CLÍNICA" IMAGEN + TEXTO---------- */
+
 #presentacion {
   display: flex;
   margin-bottom: 0px;
@@ -52,25 +50,28 @@
   font-size: 18px;
 }
 
+/* Nombre de la clínica en texto de presentación */
 span {
   font-weight: 700;
   color: #005059;
 }
 
+/* Texto ¡Te esperamos! */
 .teEsperamos {
   color: #005059;
   font-weight: 900;
   font-size: 28px;
 }
 
-/* ESTILO DE LOS ANIMALES EN ADOPCIÓN */
+/* ----------ESTILO DE LOS ANIMALES EN ADOPCIÓN---------- */
 
 #adopciones {
   background-color: #7ac9d0;
   padding: 3%;
+  margin: 0px;
 }
 
-#adopciones h1 {
+h1 {
   color: #005059;
 }
 
@@ -79,16 +80,23 @@ span {
 }
 
 .textoAdopcion a {
-  color: white;
+  color: #005059;
   text-decoration: none;
+  font-weight: 700;
 }
 
+.textoAdopcion a:hover {
+  color: #c8e8ea;
+}
+
+/* Div con toda la información que viene desde la BBDD*/
 #listadoMascotas {
   display: flex;
   justify-content: space-around;
   margin: 20px;
 }
 
+/* Div con la información de un objeto/mascota de la BBDD*/
 .animalAdopcion {
   padding: 5px 25px 10px 25px;
   border-radius: 5px;
@@ -97,8 +105,9 @@ span {
   margin-top: 2%;
 }
 
-.animalAdopcion h3 {
+h3 {
   font-size: 1.5em;
+  color: #005059;
 }
 
 #botonAdoptar {
@@ -114,4 +123,90 @@ span {
 #botonAdoptar:hover {
   background-color: #7ac9d0;
   border: none;
+}
+
+/* ----------CONTACTO---------- */
+#contacto {
+  background-color: #c8e8ea;
+  margin: 0px;
+  padding: 3%;
+}
+
+.infoContacto {
+  display: flex;
+  justify-content: space-around;
+}
+.infoContacto img {
+  width: 60%;
+}
+
+/* ----------FORMULARIO REGISTRO---------- */
+.clientesRegistro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  padding-left: 15%;
+}
+
+.clientesRegistro input {
+  margin: 1%;
+  padding: 10px 100px 10px 10px;
+  border: 1.5px solid #005059;
+  border-radius: 5px;
+  background-color: #c8e8ea;
+}
+
+.clientesRegistro ::placeholder {
+  color: #005059;
+}
+
+.registroDivision {
+  display: flex;
+}
+
+#checkbox {
+  margin-top: 1.5%;
+  margin-bottom: 2.5%;
+}
+
+#botonRegistrar {
+  border: 1px solid #005059;
+  color: #005059;
+  padding: 3%;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1em;
+}
+
+#botonRegistrar:hover {
+  border: none;
+  background-color: #7ac9d0;
+}
+.ventajasRegistro {
+  width: 50%;
+  background-color: #7ac9d0;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  font-size: 18px;
+}
+
+.mensajeRegistro {
+  background-color: #7ac9d0;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 3%;
+  color: #005059;
+}
+
+.falloRegistro {
+  background-color: #fe9a8456;
+  color: #fa7152;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1em;
+  padding: 3%;
 }

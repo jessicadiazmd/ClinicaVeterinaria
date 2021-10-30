@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica veterinaria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="cabecera">
+        <img
+          src="img/logo.png"
+          alt="Logotipo clínica veterinaria Larrucea"
+          width="100px"
+        />
+        <nav>
+          <ul>
+            <a href="index.html"><li>La clínica</li></a>
+            <a href="index.html#adopciones"><li>Adopciones</li></a>
+            <a href="index.html#contacto"><li>Contacto</li></a>
+            <a href="registro.html" style="font-weight: 700"
+              ><li>Registro/Inicio</li></a
+            >
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="registroClientes">
+        <div class="registroDivision">
+          <div class="clientesRegistro">
+            <h1>Rellena el formulario.<br />Es fácil y rápido.</h1>
+            <input type="text" id="nombre" placeholder="Nombre" required />
+
+            <input type="text" id="email" placeholder="Email" required />
+
+            <input
+              type="text"
+              id="mascota"
+              placeholder="Nombre de tu mascota"
+              required
+            />
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Escribe una contraseña"
+              required
+            />
+
+            <input
+              type="password"
+              id="secondpassword"
+              placeholder="Repite la contraseña"
+              required
+            />
+
+            <div id="checkbox">
+              <input type="checkbox" value="notificacionAdopcion" />
+              <label
+                >Quiero que me aviseis de los nuevos animales en adopción</label
+              >
+            </div>
+
+            <div id="errorContraseña"></div>
+
+            <button class="bold" id="botonRegistrar" type="submit">
+              Registrarme
+            </button>
+          </div>
+          <div class="ventajasRegistro">
+            <h3>¿Por qué registrarte?</h3>
+            <p>
+              Si te registras podrás pedir, cambiar y anular las citas para tu
+              mascota desde la web (Aunque si lo prefieres estaremos encantados
+              de que nos llames o vengas a vernos).
+            </p>
+            <p>
+              Y, si quieres, puedes enterarte de si hay nuevos animales en
+              adopción gracias a nuestras notificaciones por correo electrónico.
+              Solo tienes que marcar la casilla que hay habilitada para ello
+              justo antes del botón "Registrarme"
+            </p>
+            <p>
+              Si lo de registrarte en aplicaciones o páginas web no es lo tuyo,
+              no te preocupes que en <span>Clínica VetPet</span> te atenderemos
+              con el mismo cariño.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>
