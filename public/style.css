@@ -1,0 +1,117 @@
+/* body {
+  background-color: #7ac9d0;
+} */
+
+/* ESTILO DE LA CABECERA */
+
+#cabecera {
+  padding: 30px 20px 0px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cabecera img {
+  width: 10%;
+  height: 10%;
+}
+
+#cabecera ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+#cabecera ul a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+#cabecera ul a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+#cabecera ul li {
+  list-style: none;
+  margin: 20px;
+  color: #005059;
+}
+
+#presentacion {
+  display: flex;
+  margin-bottom: 0px;
+}
+#presentacion img {
+  width: 50%;
+}
+
+.textoPresentacion {
+  background-color: #c8e8ea;
+  padding: 5%;
+  font-size: 18px;
+}
+
+span {
+  font-weight: 700;
+  color: #005059;
+}
+
+.teEsperamos {
+  color: #005059;
+  font-weight: 900;
+  font-size: 28px;
+}
+
+/* ESTILO DE LOS ANIMALES EN ADOPCIÓN */
+
+#adopciones {
+  background-color: #7ac9d0;
+  padding: 3%;
+}
+
+#adopciones h1 {
+  color: #005059;
+}
+
+.textoAdopcion {
+  margin-left: 5%;
+}
+
+.textoAdopcion a {
+  color: white;
+  text-decoration: none;
+}
+
+#listadoMascotas {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.animalAdopcion {
+  padding: 5px 25px 10px 25px;
+  border-radius: 5px;
+  background-color: #c8e8ea;
+  color: #005059;
+  margin-top: 2%;
+}
+
+.animalAdopcion h3 {
+  font-size: 1.5em;
+}
+
+#botonAdoptar {
+  border: 1px solid #005059;
+  color: #005059;
+  padding: 5%;
+  border-radius: 5px;
+  background-color: #c8e8ea;
+  font-weight: 900;
+  font-size: 1em;
+}
+
+#botonAdoptar:hover {
+  background-color: #7ac9d0;
+  border: none;
+}
