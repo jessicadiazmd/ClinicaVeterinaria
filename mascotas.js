@@ -38,6 +38,6 @@ router.get("/adoptar", (req, res) => {
         }
       } //else
     }); //fin del toArray
-}); //fin frl router.get
+}); //fin router.get
 
 module.exports = router;

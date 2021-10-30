@@ -8,7 +8,6 @@ fetch("http://localhost:3000/mascotas/listado")
             <form action="/mascotas/adoptar"><input type="hidden" value="${data.results[i].nombre}" name="nombre">
             <button id="botonAdoptar" type=“submit”>Adoptar</button>
             </form>
-            <p id="animalAdoptado"></p>
             </div>`;
     }
     document.getElementById("listadoMascotas").innerHTML = `${mostrarAnimales}`;
