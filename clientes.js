@@ -5,7 +5,7 @@ router.use(express.urlencoded({ extended: false })); //recoger archivos encoded 
 router.use(express.json()); //recoger archivos de tipo put
 router.use(express.static("public")); //ir a los archivos estáticos
 
-//Ruta /clientes/registrar para registrar cliente
+//REGISTRO DEL CLIENTE
 
 router.post("/alta", (req, res) => {
   let contraseniaCifrada = bcrypt.hashSync(req.body.password, 10);
@@ -65,52 +65,94 @@ router.post("/alta", (req, res) => {
     }); //cierra el .toArray
 }); //cierra el router.post
 
-//Ruta /clientes/modificar para modificar cliente
-
-router.put("/modificar", (req, res) => {
-  let contraseniaCifrada = bcrypt.hashSync(req.body.password, 10);
-  let coincidencia = bcrypt.compareSync(req.body.password, contraseniaCifrada);
-
-  if (coincidencia) {
-    req.app.locals.db.collection("clientes").updateOne(
-      { email: req.body.email },
-      {
-        $set: {
-          //se puede poner solo req.body
-          nombre: req.body.nombre,
-          password: req.body.password,
-          mascota: req.body.mascota,
-        },
-      },
-      (err, data) => {
-        //Si hay un error de Mongo
-        if (err) {
-          res.send({
-            error: true,
-            data: err,
-            mensaje: "No se ha podido acceder a la base de datos",
-          });
-        } else {
-          // Si el email introducido es correcto
-          if (data.modifiedCount > 0) {
+//Ruta /clientes/login PARA INICIAR SESIÓN PARA PEDIR CITA
+router.post("/login", (req, res) => {
+  console.log(req.body);
+  req.app.locals.db
+    .collection("clientes")
+    .find({ email: req.body.email })
+    .toArray((err, data) => {
+      //Si hay un error de Mongo
+      if (err) {
+        res.send({
+          error: true,
+          data: data,
+          mensaje: `<p class="falloRegistro">No se ha podido acceder a la base de datos</p>`,
+        });
+      } else {
+        //Si el correo esta registrado
+        if (data.length > 0) {
+          //Si la contraseña coincide con la BBDD
+          if (bcrypt.compareSync(req.body.password, data[0].password)) {
             res.send({
               error: false,
               data: data,
-              mensaje: "Cliente actualizado correctamente",
+              mensaje: "Logueado correctamente",
             });
           }
-          // Si el email no esta en la base de datos
+          //Si la contraseña NO coincide con la BBDD
           else {
             res.send({
               error: true,
               data: data,
-              mensaje: "No se ha encontrado ningún cliente con ese email",
+              mensaje: `<p class="falloRegistro">Contraseña incorrecta</p>`,
             });
           }
         }
+        //Si el correo no esta registrado
+        else {
+          res.send({
+            error: true,
+            data: data,
+            mensaje: `<p class="falloRegistro">No existe ningún usuario con el correo ${req.body.email}</p>`,
+          });
+        }
       }
-    );
-  } //cierre de if coincidencia
+    });
+});
+
+//Ruta /clientes/modificar para modificar cliente
+
+router.put("/modificar", (req, res) => {
+  req.app.locals.db.collection("clientes").updateOne(
+    { email: req.body.email },
+    {
+      $set: {
+        //se puede poner solo req.body
+        nombre: req.body.nombre,
+        password: bcrypt.hashSync(req.body.password, 10),
+        mascota: req.body.mascota,
+      },
+    },
+    (err, data) => {
+      //Si hay un error de Mongo
+      if (err) {
+        res.send({
+          error: true,
+          data: err,
+          mensaje: "No se ha podido acceder a la base de datos",
+        });
+      } else {
+        // Si el email introducido es correcto
+        if (data.modifiedCount > 0) {
+          res.send({
+            error: false,
+            data: data,
+            mensaje: "Cliente actualizado correctamente",
+          });
+        }
+        // Si el email no esta en la base de datos
+        else {
+          res.send({
+            error: true,
+            data: data,
+            mensaje: "No se ha encontrado ningún cliente con ese email",
+          });
+        }
+      }
+    }
+  );
+  //cierre de if coincidencia
 }); //cierra el router.put
 
 //Ruta /clientes/baja para que un cliente se de de baja de la clínica

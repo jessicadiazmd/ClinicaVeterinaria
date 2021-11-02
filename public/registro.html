@@ -16,12 +16,15 @@
         />
         <nav>
           <ul>
-            <a href="index.html"><li>La clínica</li></a>
-            <a href="index.html#adopciones"><li>Adopciones</li></a>
-            <a href="index.html#contacto"><li>Contacto</li></a>
-            <a href="registro.html" style="font-weight: 700"
-              ><li>Registro/Inicio</li></a
-            >
+            <li>
+              <a href="index.html">La clínica</a>
+            </li>
+            <li><a href="#adopciones">Adopciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="citas.html">Citas</a></li>
+            <li>
+              <a href="registro.html" style="font-weight: 700">Mi cuenta</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -29,7 +32,7 @@
     <main>
       <section id="registroClientes">
         <div class="registroDivision">
-          <div class="clientesRegistro">
+          <div class="clientesRegistro formularios" id="clientesRegistro ">
             <h1>Rellena el formulario.<br />Es fácil y rápido.</h1>
             <input type="text" id="nombre" placeholder="Nombre" required />
 
@@ -65,7 +68,11 @@
 
             <div id="errorContraseña"></div>
 
-            <button class="bold" id="botonRegistrar" type="submit">
+            <button
+              id="botonRegistrar"
+              class="botonFormulario"
+              onclick="registro()"
+            >
               Registrarme
             </button>
           </div>
@@ -91,7 +98,37 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footerRegistro">
+      <div class="columnasFooter">
+        <div class="columnaPrincipal">
+          <h4>Clínica PetVet</h4>
+          <p>Nos preocupamos de tus mascotas como si fuesen las nuestras</p>
+        </div>
+        <div class="columna">
+          <!-- en css uppercase-->
+          <h4>Contacto</h4>
+          <p>Calle Lorem ipsum, 35</p>
+          <p>48940, Leioa</p>
+          <p>944 235 382<br />645 538 892</p>
+          <p>clinica.petvet@gmail.com</p>
+        </div>
+        <div class="columna">
+          <h4><a href="index.html">La Clínica</a></h4>
+          <p><a href="index.html#adopciones">Adopciones</a></p>
+          <p><a href="index.html#contacto">Contacto</a></p>
+          <p><a href="citas.html">Citas</a></p>
+          <p><a href="registro.html">Registro</a></p>
+        </div>
+        <div class="columna">
+          <h4>Legal</h4>
+          <p>Aviso legal</p>
+          <p>Política de privacidad</p>
+          <p>Política de cookies</p>
+        </div>
+      </div>
+
+      <!-- fin columnasFooter-->
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>

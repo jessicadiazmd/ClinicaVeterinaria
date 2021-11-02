@@ -18,12 +18,13 @@
         <!-- MENU -->
         <nav>
           <ul>
-            <a href="index.html" style="font-weight: 700"
-              ><li>La clínica</li></a
-            >
-            <a href="#adopciones"><li>Adopciones</li></a>
-            <a href="#contacto"><li>Contacto</li></a>
-            <a href="registro.html"><li>Registro/Inicio</li></a>
+            <li>
+              <a href="index.html" style="font-weight: 700">La clínica</a>
+            </li>
+            <li><a href="#adopciones">Adopciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="citas.html">Citas</a></li>
+            <li><a href="registro.html">Mi cuenta</a></li>
           </ul>
         </nav>
       </div>
@@ -71,6 +72,7 @@
           </p>
         </div>
         <div id="listadoMascotas"></div>
+        <div id="animalAdoptado"></div>
       </div>
       <!-- div adopciones -->
 
@@ -82,11 +84,47 @@
             src="img/maps.jpg"
             alt="mapa de la zona donde se encuentra la clínica"
           />
-          <div class="info"><p></p></div>
+          <div class="info">
+            <hr />
+            <p>Calle Lorem ipsum, 35<br />48940, Leioa<br />Bizkaia</p>
+            <p><span>Horario:</span> <br />10:00 - 14:00 <br />17:00 - 20:00</p>
+            <p><span>Teléfono:</span> <br />944 235 382<br />645 538 892</p>
+            <p><span>Email:</span> <br />clinica.petvet@gmail.com</p>
+          </div>
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="columnasFooter">
+        <div class="columnaPrincipal">
+          <h4>Clínica PetVet</h4>
+          <p>Nos preocupamos de tus mascotas como si fuesen las nuestras</p>
+        </div>
+        <div class="columna">
+          <!-- en css uppercase-->
+          <h4>Contacto</h4>
+          <p>Calle Lorem ipsum, 35</p>
+          <p>48940, Leioa</p>
+          <p>944 235 382<br />645 538 892</p>
+          <p>clinica.petvet@gmail.com</p>
+        </div>
+        <div class="columna">
+          <h4><a href="index.html">La Clínica</a></h4>
+          <p><a href="index.html#adopciones">Adopciones</a></p>
+          <p><a href="index.html#contacto">Contacto</a></p>
+          <p><a href="citas.html">Citas</a></p>
+          <p><a href="registro.html">Registro</a></p>
+        </div>
+        <div class="columna">
+          <h4>Legal</h4>
+          <p>Aviso legal</p>
+          <p>Política de privacidad</p>
+          <p>Política de cookies</p>
+        </div>
+      </div>
+
+      <!-- fin columnasFooter-->
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica veterinaria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="cabecera">
+        <img
+          src="img/logo.png"
+          alt="Logotipo clínica veterinaria Larrucea"
+          width="100px"
+        />
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">La clínica</a>
+            </li>
+            <li><a href="#adopciones">Adopciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="citas.html" style="font-weight: 700">Citas</a></li>
+            <li>
+              <a href="registro.html">Mi cuenta</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="citasClientes">
+        <!-- FORMULARIO INICIO DE SESIÓN -->
+        <h1>Citas</h1>
+        <p id="sesionCita">Para pedir cita introduce tu usuario y contraseña</p>
+
+        <div class="inicioSesion formularios" id="inicioSesion">
+          <input type="text" id="emailLogin" placeholder="Email" required />
+          <input
+            type="password"
+            id="passwordLogin"
+            placeholder="Contraseña"
+            required
+          />
+          <button id="botonLogin" class="botonFormulario" onclick="logear()">
+            Iniciar sesión
+          </button>
+          <div id="mensajeError" id="mensajeError"></div>
+          <div id="mensajeAlta" id="mensajeAlta"></div>
+        </div>
+
+        <!-- RESERVAR CITA -->
+        <div id="reservaCita" class="reservaCita">
+          <div class="espaciado">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" id="fecha" />
+          </div>
+          <div class="espaciado">
+            <label for="hora">Hora</label>
+            <input
+              type="time"
+              name="hora"
+              min="10:00:00"
+              max="20:30:00"
+              id="hora"
+            />
+          </div>
+          <div class="espaciado">
+            <label for="especialidad">Especialidad</label>
+            <select id="especialidad" name="especialidad" value="escoge">
+              <option value="Revisión" id="revision">Revisión</option>
+              <option value="Vacunación" id="vacuna">Vacunación</option>
+              <option value="Desparasitación" id="desparasitacion">
+                Desparasitación
+              </option>
+              <option value="Otro" id="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="espaciado" id="mensajeCita"></div>
+          <div class="espaciado" id="mensajeError"></div>
+
+          <button id="citaNueva" class="botonCita" onclick="citaNueva()">
+            Reservar cita
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="columnasFooter">
+        <div class="columnaPrincipal">
+          <h4>Clínica PetVet</h4>
+          <p>Nos preocupamos de tus mascotas como si fuesen las nuestras</p>
+        </div>
+        <div class="columna">
+          <!-- en css uppercase-->
+          <h4>Contacto</h4>
+          <p>Calle Lorem ipsum, 35</p>
+          <p>48940, Leioa</p>
+          <p>944 235 382<br />645 538 892</p>
+          <p>clinica.petvet@gmail.com</p>
+        </div>
+        <div class="columna">
+          <h4><a href="index.html">La Clínica</a></h4>
+          <p><a href="index.html#adopciones">Adopciones</a></p>
+          <p><a href="index.html#contacto">Contacto</a></p>
+          <p><a href="citas.html">Citas</a></p>
+          <p><a href="registro.html">Registro</a></p>
+        </div>
+        <div class="columna">
+          <h4>Legal</h4>
+          <p>Aviso legal</p>
+          <p>Política de privacidad</p>
+          <p>Política de cookies</p>
+        </div>
+      </div>
+
+      <!-- fin columnasFooter-->
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

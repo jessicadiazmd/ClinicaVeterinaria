@@ -1,3 +1,14 @@
+h1,
+h4 {
+  color: #005059;
+}
+
+/* Nombre de la clínica en texto de presentación y enlace a contacto en texto adopciones*/
+span {
+  font-weight: 700;
+  color: #005059;
+}
+
 /* ----------ESTILO DE LA CABECERA---------- */
 
 #cabecera {
@@ -19,7 +30,7 @@
 
 #cabecera ul a {
   text-decoration: none;
-  color: black;
+  color: #005059;
   font-size: 18px;
 }
 
@@ -50,12 +61,6 @@
   font-size: 18px;
 }
 
-/* Nombre de la clínica en texto de presentación */
-span {
-  font-weight: 700;
-  color: #005059;
-}
-
 /* Texto ¡Te esperamos! */
 .teEsperamos {
   color: #005059;
@@ -69,10 +74,6 @@ span {
   background-color: #7ac9d0;
   padding: 3%;
   margin: 0px;
-}
-
-h1 {
-  color: #005059;
 }
 
 .textoAdopcion {
@@ -134,22 +135,34 @@ h3 {
 
 .infoContacto {
   display: flex;
-  justify-content: space-around;
 }
 .infoContacto img {
-  width: 60%;
+  width: 40%;
+  margin-left: 5%;
+}
+
+.info {
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px solid #005059;
+  color: #005059;
 }
 
 /* ----------FORMULARIO REGISTRO---------- */
-.clientesRegistro {
+.formularios {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
   padding-left: 15%;
+  margin-bottom: 3%;
 }
 
-.clientesRegistro input {
+.formularios input {
   margin: 1%;
   padding: 10px 100px 10px 10px;
   border: 1.5px solid #005059;
@@ -157,7 +170,7 @@ h3 {
   background-color: #c8e8ea;
 }
 
-.clientesRegistro ::placeholder {
+.formularios ::placeholder {
   color: #005059;
 }
 
@@ -196,7 +209,6 @@ h3 {
 .mensajeRegistro {
   background-color: #7ac9d0;
   border-radius: 5px;
-  font-weight: 900;
   font-size: 16px;
   padding: 3%;
   color: #005059;
@@ -206,7 +218,106 @@ h3 {
   background-color: #fe9a8456;
   color: #fa7152;
   border-radius: 5px;
-  font-weight: 900;
   font-size: 1em;
   padding: 3%;
+}
+
+/* ----------CITAS--------- */
+
+/* .clientes-reserva {
+  display: none;
+  flex-direction: column;
+  max-width: 40%;
+} */
+
+#citasClientes {
+  margin: 3%;
+}
+
+.inicioSesion {
+  padding-left: 0px;
+}
+
+#botonLogin {
+  border: 1px solid #005059;
+  color: #005059;
+  padding: 2%;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1em;
+  margin: 1%;
+}
+
+#botonLogin:hover {
+  border: none;
+  background-color: #7ac9d0;
+}
+
+#reservaCita {
+  display: flex;
+  display: none;
+  flex-direction: column;
+}
+
+.espaciado {
+  margin-top: 20px;
+}
+
+.botonCita {
+  border: 1px solid #005059;
+  color: #005059;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1em;
+  width: fit-content;
+}
+
+.botonCita:hover {
+  border: none;
+  background-color: #7ac9d0;
+}
+
+/* ----------FOOTER---------- */
+footer {
+  background-color: #7ac9d0;
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+
+.footerRegistro {
+  background-color: #c8e8ea;
+}
+
+.columnasFooter {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .columna {
+  display: flex;
+  flex-direction: column;
+}
+
+footer p {
+  margin-bottom: 0.5px;
+}
+
+footer p a {
+  text-decoration: none;
+  color: black;
+}
+footer h4 a {
+  text-decoration: none;
+  color: #005059;
+}
+
+footer p a:hover {
+  color: #005059;
+  font-weight: 700;
+}
+footer h4 a:hover {
+  color: white;
 }
