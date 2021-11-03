@@ -67,7 +67,6 @@ router.post("/alta", (req, res) => {
 
 //Ruta /clientes/login PARA INICIAR SESIÓN PARA PEDIR CITA
 router.post("/login", (req, res) => {
-  console.log(req.body);
   req.app.locals.db
     .collection("clientes")
     .find({ email: req.body.email })
@@ -120,7 +119,6 @@ router.put("/modificar", (req, res) => {
       $set: {
         //se puede poner solo req.body
         nombre: req.body.nombre,
-        password: bcrypt.hashSync(req.body.password, 10),
         mascota: req.body.mascota,
       },
     },
@@ -182,7 +180,7 @@ router.delete("/baja", (req, res) => {
           res.send({
             error: true,
             data: data,
-            mensaje: "No se ha encontrado ningún cliente con ese email",
+            mensaje: `<p class="falloRegistro">No se ha encontrado ningún usuario con ese email</p>`,
           });
         }
       }

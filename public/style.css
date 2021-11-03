@@ -222,6 +222,50 @@ hr {
   padding: 3%;
 }
 
+#miCuenta {
+  display: flex;
+  justify-content: space-around;
+  background-color: #c8e8ea;
+  padding: 3%;
+}
+
+.botonSesion {
+  border: 1px solid #005059;
+  color: #005059;
+  background-color: #c8e8ea;
+  padding: 10px 15px 10px 15px;
+  margin: 1%;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1em;
+}
+
+.botonSesion:hover {
+  border: none;
+  background-color: #7ac9d0;
+}
+
+.formulariosSesion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+
+  margin-bottom: 3%;
+}
+
+.formulariosSesion input {
+  padding: 10px 100px 10px 10px;
+  border: 1.5px solid #005059;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #7ac9d0;
+}
+
+.formulariosSesion ::placeholder {
+  color: #005059;
+}
+
 /* ----------CITAS--------- */
 
 /* .clientes-reserva {
@@ -287,10 +331,6 @@ footer {
   padding-top: 30px;
 }
 
-.footerRegistro {
-  background-color: #c8e8ea;
-}
-
 .columnasFooter {
   display: flex;
   justify-content: space-around;
@@ -320,4 +360,18 @@ footer p a:hover {
 }
 footer h4 a:hover {
   color: white;
+}
+
+.mensajeBajaOk {
+  background-color: #7ac9d0;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 4%;
+  color: #005059;
+  border: 1.5px solid #005059;
+}
+
+.modificarDatos {
+  color: #005059;
+  font-size: 14px;
 }

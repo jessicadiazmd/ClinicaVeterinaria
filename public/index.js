@@ -80,7 +80,7 @@ function logear() {
         document.getElementById("reservaCita").style.display = "flex";
         document.getElementById("sesionCita").style.display = "none";
       } else {
-        document.getElementById("mensajeError").innerHTML = data2.mensaje;
+        document.getElementById("mensajeError").innerHTML = data.mensaje;
       }
     });
 }
@@ -112,6 +112,59 @@ function citaNueva() {
         document.getElementById("mensajeCita").innerHTML = data.mensaje;
       } else {
         document.getElementById("mensajeError").innerHTML = data.mensaje;
+      }
+    });
+}
+
+//BAJA DE USUARIO
+
+function baja() {
+  let email = {
+    email: document.getElementById("emailbaja").value,
+  };
+  fetch("/clientes/baja", {
+    method: "DELETE",
+    body: JSON.stringify(email),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.error === false) {
+        document.getElementById(
+          "mensajeBaja"
+        ).innerHTML = `<p class="mensajeBajaOk">Usuario dado de baja correctamente</p>`;
+      } else {
+        document.getElementById("mensajeErrorBaja").innerHTML = data.mensaje;
+      }
+    });
+}
+
+//MODIFICAR USUARIO
+
+function modificarUsuario() {
+  let nuevosDatos = {
+    nombre: document.getElementById("modificarNombre").value,
+    email: document.getElementById("modificarEmail").value,
+    mascota: document.getElementById("modificarMascota").value,
+  };
+  fetch("/clientes/modificar", {
+    method: "PUT",
+    body: JSON.stringify(nuevosDatos),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.error === false) {
+        document.getElementById(
+          "mensajeModificado"
+        ).innerHTML = `<p class="mensajeBajaOk">Tus datos han sido modificados</p>`;
+      } else {
+        document.getElementById("mensajeErrorModificado").innerHTML =
+          data.mensaje;
       }
     });
 }

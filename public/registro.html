@@ -19,11 +19,13 @@
             <li>
               <a href="index.html">La clínica</a>
             </li>
-            <li><a href="#adopciones">Adopciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="index.html#adopciones">Adopciones</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
             <li><a href="citas.html">Citas</a></li>
             <li>
-              <a href="registro.html" style="font-weight: 700">Mi cuenta</a>
+              <a href="registro.html" style="font-weight: 700"
+                >Registro/Inicio</a
+              >
             </li>
           </ul>
         </nav>
@@ -33,7 +35,7 @@
       <section id="registroClientes">
         <div class="registroDivision">
           <div class="clientesRegistro formularios" id="clientesRegistro ">
-            <h1>Rellena el formulario.<br />Es fácil y rápido.</h1>
+            <h1>Registrate.<br />Es fácil y rápido.</h1>
             <input type="text" id="nombre" placeholder="Nombre" required />
 
             <input type="text" id="email" placeholder="Email" required />
@@ -97,8 +99,86 @@
           </div>
         </div>
       </section>
+      <section id="miCuenta">
+        <!-- <div id="inicioSesion">
+          <h3>Iniciar sesión</h3>
+          <div class="formulariosSesion" id="iniciarSesion">
+            <input type="text" id="emailLogin" placeholder="Email" required />
+            <input
+              type="password"
+              id="passwordLogin"
+              placeholder="Contraseña"
+              required
+            />
+            <button
+              id="botonInicio"
+              class="botonSesion"
+              onclick="inicioSesion()"
+            >
+              Iniciar
+            </button>
+            <div id="mensajeErrorInicio"></div>
+            <div id="mensajeInicioSesion"></div>
+          </div>
+        </div> -->
+        <div id="modificarSesion">
+          <h3>Modificar mis datos</h3>
+          <div class="formulariosSesion" id="modificarSesion">
+            <input
+              type="text"
+              id="modificarEmail"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              id="modificarNombre"
+              placeholder="Nombre"
+              required
+            />
+
+            <input
+              type="text"
+              id="modificarMascota"
+              placeholder="Nombre de tu mascota"
+              required
+            />
+            <!-- <input
+              type="password"
+              id="modificarPassword"
+              placeholder="Contraseña"
+              required
+            /> -->
+            <p class="modificarDatos">
+              *Rellena todos los datos aunque no quieras modificarlos
+            </p>
+            <button
+              id="botonModificar"
+              class="botonSesion"
+              onclick="modificarUsuario()"
+            >
+              Modificar
+            </button>
+            <div id="mensajeErrorModificado"></div>
+            <div id="mensajeModificado"></div>
+          </div>
+        </div>
+
+        <div id="Baja">
+          <h3>Darme de baja</h3>
+          <div class="formulariosSesion" id="bajaSesion">
+            <input type="text" id="emailbaja" placeholder="Email" required />
+
+            <button id="botonBaja" class="botonSesion" onclick="baja()">
+              Darme de baja
+            </button>
+            <div id="mensajeErrorBaja"></div>
+            <div id="mensajeBaja"></div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="footerRegistro">
+    <footer>
       <div class="columnasFooter">
         <div class="columnaPrincipal">
           <h4>Clínica PetVet</h4>
